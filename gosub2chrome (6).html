@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>play that sh!t</title>
+
+    <style>
+        /* Black background */
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000000;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        /* Smaller white center box */
+        .content-box {
+            background: white;
+            width: 300px;        /* smaller box */
+            padding: 15px;       /* tighter spacing */
+            margin-top: 30px;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Black glow for GIF */
+        .glow {
+            filter: drop-shadow(0 0 10px #000000)
+                    drop-shadow(0 0 20px #000000);
+        }
+
+        /* Falling hearts */
+        .heart {
+            position: fixed;
+            top: -10px;
+            color: white;
+            font-size: 30px;     /* bigger hearts */
+            animation: fall linear infinite;
+            user-select: none;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Falling hearts script -->
+    <script>
+        for (let i = 0; i < 40; i++) {
+            let heart = document.createElement("div");
+            heart.className = "heart";
+            heart.innerHTML = "♡";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = (Math.random() * 20 + 25) + "px"; // bigger random hearts
+            heart.style.animationDuration = (Math.random() * 5 + 4) + "s";
+            heart.style.animationDelay = Math.random() * 5 + "s";
+            document.body.appendChild(heart);
+        }
+    </script>
+
+    <!-- White content box -->
+    <div class="content-box">
+        <h1>Hi~!</h1>
+        <p>go subscribe to chromehearts</p>
+
+        <img 
+            class="glow"
+            src="https://cdn.discordapp.com/attachments/1255692212717752513/1436501080568631396/IMG_7246.gif?ex=69395ca2&is=69380b22&hm=4a50fc8c08d77e407449dc99498539c87444a4026c34b7f61a63315cddb91e4c"
+            alt="cool gif"
+            style="width:150px;height:auto;"
+        >
+
+        <p>
+            <a href="https://www.youtube.com/@imchromelol" target="_blank">
+                Click here to subscribe!
+            </a>
+        </p>
+    </div>
+
+</body>
+</html>
+
+
+
